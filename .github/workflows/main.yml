@@ -22,7 +22,7 @@ jobs:
         run: npm run build
 
       - name: Criar Executável
-        run: npx nwjs-builder-phoenix --tasks win-x64 --targets win-x64 .
+        run: ./node_modules/.bin/build --tasks win-x64 --targets win-x64 .
 
       - name: Upload do Sistema
         uses: actions/upload-artifact@v4
