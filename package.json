@@ -7,14 +7,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "gerar-exe": "build --tasks win-x64 --targets win-x64 ."
+    "dist": "build --tasks win-x64 --targets win-x64 --nwjs-version 0.82.0 --nwjs-flavor normal ."
   },
   "nwjs": {
     "name": "gestao-atestados",
     "main": "dist/index.html",
     "window": {
       "width": 1200,
-      "height": 850
+      "height": 850,
+      "title": "Gestão de Atestados"
     }
   },
   "dependencies": {
