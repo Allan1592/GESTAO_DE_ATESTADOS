@@ -1,4 +1,4 @@
-name: Gerar EXE
+name: Build
 
 on:
   push:
@@ -6,10 +6,10 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Baixar projeto
+      - name: Baixar código
         uses: actions/checkout@v4
 
       - name: Instalar Node
@@ -17,17 +17,8 @@ jobs:
         with:
           node-version: 20
 
-      - name: Instalar dependencias
+      - name: Instalar dependências
         run: npm install
 
-      - name: Build do sistema
+      - name: Build do projeto
         run: npm run build
-
-      - name: Gerar executavel
-        run: npx electron-builder --win portable
-
-      - name: Enviar executavel
-        uses: actions/upload-artifact@v4
-        with:
-          name: Sistema-Atestados
-          path: dist
