@@ -1,4 +1,5 @@
-name: Gerar Executável Windows
+name: Gerar EXE
+
 on:
   push:
     branches: [ main ]
@@ -6,26 +7,27 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+
     steps:
-      - name: Baixar Projeto
+      - name: Baixar projeto
         uses: actions/checkout@v4
 
-      - name: Instalar Node.js
+      - name: Instalar Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Instalar Dependências
+      - name: Instalar dependencias
         run: npm install
 
-      - name: Build do React
+      - name: Build do sistema
         run: npm run build
 
-      - name: Criar Executável
-        run: npm run dist
+      - name: Gerar executavel
+        run: npx electron-builder --win portable
 
-      - name: Upload do Sistema
+      - name: Enviar executavel
         uses: actions/upload-artifact@v4
         with:
-          name: Sistema-Atestados-Windows
+          name: Sistema-Atestados
           path: dist
