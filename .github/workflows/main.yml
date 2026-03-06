@@ -1,5 +1,4 @@
-name: Gerar EXE
-
+name: Gerar Executável Windows
 on:
   push:
     branches: [ main ]
@@ -7,27 +6,26 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-
     steps:
-      - name: Baixar projeto
+      - name: Baixar Projeto
         uses: actions/checkout@v4
 
-      - name: Instalar Node
+      - name: Instalar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Instalar dependencias
+      - name: Instalar Dependências
         run: npm install
 
-      - name: Build React
+      - name: Build do React
         run: npm run build
 
-      - name: Gerar executavel
-        run: npx electron-builder --win portable
+      - name: Criar Executável
+        run: npx nwjs-builder-phoenix --tasks win-x64 --targets win-x64 .
 
-      - name: Upload
+      - name: Upload do Sistema
         uses: actions/upload-artifact@v4
         with:
-          name: Sistema-Atestados
-          path: dist
+          name: Sistema-Atestados-Final
+          path: dist/
