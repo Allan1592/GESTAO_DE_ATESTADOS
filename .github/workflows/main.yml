@@ -22,10 +22,10 @@ jobs:
         run: npm run build
 
       - name: Criar Executável
-        run: npm run gerar-exe
+        run: npm run dist
 
       - name: Upload do Sistema
         uses: actions/upload-artifact@v4
         with:
           name: Sistema-Atestados-Windows
-          path: ./dist/
+          path: ./packages/gestao-atestados-v2/win-x64/
