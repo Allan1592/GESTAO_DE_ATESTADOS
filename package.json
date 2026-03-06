@@ -7,15 +7,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "dist": "build --tasks win-x64 --targets win-x64 --nwjs-version 0.82.0 --nwjs-flavor normal ."
+    "dist": "build --tasks win-x64 --targets win-x64 --nwjs-version 0.77.0 --nwjs-flavor normal --output-dir ./vitoria ."
   },
   "nwjs": {
     "name": "gestao-atestados",
     "main": "dist/index.html",
     "window": {
       "width": 1200,
-      "height": 850,
-      "title": "Gestão de Atestados"
+      "height": 850
     }
   },
   "dependencies": {
