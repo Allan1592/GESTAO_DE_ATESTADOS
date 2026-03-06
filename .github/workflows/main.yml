@@ -1,4 +1,5 @@
 name: Gerar Executável Windows
+
 on:
   push:
     branches: [ main ]
@@ -6,27 +7,27 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Instalar Node.js
+      - name: Baixar projeto
+        uses: actions/checkout@v4
+
+      - name: Instalar Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          
-      - name: Instalar Dependencias
-        run: |
-          npm install
-          
-      - name: Build do Projeto
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Build do sistema
         run: npm run build
-          
-      - name: Empacotar com NW.js
-        run: |
-          npx nwjs-builder-phoenix --tasks win-x64 --targets win-x64 .
-          
-      - name: Upload do Resultado
+
+      - name: Empacotar EXE
+        run: npx nwjs-builder-phoenix --tasks win-x64 --targets win-x64 dist
+
+      - name: Enviar executável
         uses: actions/upload-artifact@v4
         with:
-          name: Sistema-Atestados-V2
-          path: dist/
+          name: Sistema-Atestados
+          path: dist
