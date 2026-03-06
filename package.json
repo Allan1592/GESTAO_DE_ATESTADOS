@@ -5,15 +5,6 @@
   "scripts": {
     "build": "vite build"
   },
-  "nwjs": {
-    "name": "GestaoAtestados",
-    "main": "dist/index.html",
-    "window": {
-      "width": 1200,
-      "height": 850,
-      "position": "center"
-    }
-  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -22,8 +13,6 @@
   "devDependencies": {
     "vite": "^5.0.0",
     "@vitejs/plugin-react": "^4.2.0",
-    "tailwindcss": "^3.4.0",
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.0"
+    "typescript": "^5.0.0"
   }
 }
