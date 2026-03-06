@@ -22,12 +22,10 @@ jobs:
         run: npm run build
 
       - name: Criar Executável
-        run: |
-          mkdir saida
-          npm run dist -- --output saida
+        run: npm run dist
 
       - name: Upload do Sistema
         uses: actions/upload-artifact@v4
         with:
           name: Sistema-Atestados-Windows
-          path: saida/
+          path: ./vitoria/
