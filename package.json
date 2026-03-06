@@ -1,37 +1,25 @@
 {
   "name": "gestao-atestados-v2",
   "version": "1.0.0",
+  "type": "module",
   "main": "dist/index.html",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "vite build"
   },
   "nwjs": {
-    "name": "Gestão de Atestados",
-    "title": "Gestão de Atestados - Desktop V2.0",
+    "name": "GestaoAtestados",
     "main": "dist/index.html",
-    "window": {
-      "title": "Gestão de Atestados CTE",
-      "width": 1200,
-      "height": 850,
-      "position": "center"
-    },
-    "nodejs": true
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "lucide-react": "^0.284.0"
+    "window": { "width": 1200, "height": 850 }
   },
   "devDependencies": {
     "vite": "^6.0.0",
     "@vitejs/plugin-react": "^4.3.0",
     "@tailwindcss/vite": "^4.0.0",
-    "tailwindcss": "^4.0.0",
-    "typescript": "^5.0.0",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "@types/node": "^20.0.0"
+    "tailwindcss": "^4.0.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "lucide-react": "^0.284.0"
   }
 }
