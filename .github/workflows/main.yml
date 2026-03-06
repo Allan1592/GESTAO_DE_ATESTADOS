@@ -7,24 +7,23 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Instalar Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           
-      - name: Instalar Dependências e Build
+      - name: Instalar Dependencias e Build
         run: |
           npm install
           npm run build
           
       - name: Empacotar com NW.js
         run: |
-          # Aqui o robô junta o seu código com o Globo Azul (NW.js)
           npx nwjs-builder-phoenix --tasks win-x64 --targets win-x64 .
           
-      - - name: Upload do Resultado
+      - name: Upload do Resultado
         uses: actions/upload-artifact@v4
         with:
           name: Sistema-Atestados-V2
