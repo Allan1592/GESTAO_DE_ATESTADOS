@@ -1,40 +1,31 @@
 {
-  "name": "gestao-atestados",
-  "version": "1.0.0",
+  "name": "gestao-atestados-v2",
   "private": true,
+  "version": "1.0.0",
   "type": "module",
-  "main": "electron/main.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "electron": "electron .",
-    "pack": "vite build && electron-builder"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "lucide-react": "^0.284.0"
+    "@google/genai": "^1.29.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "lucide-react": "^0.546.0",
+    "express": "^4.21.2",
+    "dotenv": "^17.2.3",
+    "better-sqlite3": "^12.4.1",
+    "motion": "^12.23.24"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.0",
-    "electron": "^30.0.0",
-    "electron-builder": "^24.13.3",
+    "vite": "^6.2.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@tailwindcss/vite": "^4.0.0",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.0.0",
-    "vite": "^6.0.0"
-  },
-  "build": {
-    "appId": "com.sistema.atestados",
-    "productName": "Sistema Atestados",
-    "files": [
-      "dist/**/*",
-      "electron/**/*"
-    ],
-    "directories": {
-      "buildResources": "assets"
-    },
-    "win": {
-      "target": "portable"
-    }
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/node": "^22.14.0"
   }
 }
