@@ -14,10 +14,13 @@ jobs:
         with:
           node-version: 20
           
-      - name: Instalar Dependencias e Build
+      - name: Instalar Dependencias (Forçado)
         run: |
-          npm install
-          npm run build
+          npm install --include=dev
+          npm install @tailwindcss/vite@latest tailwindcss@latest --save-dev
+          
+      - name: Build do Projeto
+        run: npm run build
           
       - name: Empacotar com NW.js
         run: |
