@@ -1,4 +1,4 @@
-name: Gerar Executável Windows
+name: Gerar EXE
 
 on:
   push:
@@ -17,16 +17,16 @@ jobs:
         with:
           node-version: 20
 
-      - name: Instalar dependências
+      - name: Instalar dependencias
         run: npm install
 
-      - name: Build do sistema
+      - name: Build React
         run: npm run build
 
-      - name: Empacotar EXE
-        run: npx nwjs-builder-phoenix --tasks win-x64 --targets win-x64 dist
+      - name: Gerar executavel
+        run: npx electron-builder --win portable
 
-      - name: Enviar executável
+      - name: Upload
         uses: actions/upload-artifact@v4
         with:
           name: Sistema-Atestados
