@@ -9,24 +9,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Instalar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          
-      - name: Instalar Dependencias (Forçado)
+      - name: Limpar Cache e Instalar
         run: |
-          npm install --include=dev
-          npm install @tailwindcss/vite@latest tailwindcss@latest --save-dev
+          npm cache clean --force
+          npm install
           
-      - name: Build do Projeto
+      - name: Build
         run: npm run build
           
-      - name: Empacotar com NW.js
+      - name: Empacotar
         run: |
           npx nwjs-builder-phoenix --tasks win-x64 --targets win-x64 .
           
-      - name: Upload do Resultado
+      - name: Upload
         uses: actions/upload-artifact@v4
         with:
           name: Sistema-Atestados-V2
