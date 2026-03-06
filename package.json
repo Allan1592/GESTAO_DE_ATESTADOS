@@ -2,8 +2,21 @@
   "name": "gestao-atestados-v2",
   "version": "1.0.0",
   "type": "module",
+  "main": "dist/index.html",
   "scripts": {
-    "build": "vite build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "nwjs": {
+    "name": "gestao-atestados-v2",
+    "main": "dist/index.html",
+    "window": {
+      "title": "Gestão de Atestados",
+      "width": 1200,
+      "height": 850,
+      "position": "center"
+    }
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -11,8 +24,10 @@
     "lucide-react": "^0.284.0"
   },
   "devDependencies": {
-    "vite": "^5.0.0",
-    "@vitejs/plugin-react": "^4.2.0",
+    "vite": "^6.0.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "tailwindcss": "^4.0.0",
     "typescript": "^5.0.0"
   }
 }
