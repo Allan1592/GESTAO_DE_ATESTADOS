@@ -22,7 +22,7 @@ jobs:
         run: npm run build
 
       - name: Criar Executável
-        run: npm run dist
+        run: npm run gerar-exe
 
       - name: Upload do Sistema
         uses: actions/upload-artifact@v4
