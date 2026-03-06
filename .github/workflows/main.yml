@@ -24,8 +24,8 @@ jobs:
           # Aqui o robô junta o seu código com o Globo Azul (NW.js)
           npx nwjs-builder-phoenix --tasks win-x64 --targets win-x64 .
           
-      - name: Upload do Resultado
-        uses: actions/upload-artifact@v3
+      - - name: Upload do Resultado
+        uses: actions/upload-artifact@v4
         with:
           name: Sistema-Atestados-V2
           path: dist/
