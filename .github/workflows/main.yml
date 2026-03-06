@@ -22,10 +22,10 @@ jobs:
         run: npm run build
 
       - name: Criar Executável
-        run: ./node_modules/.bin/build --tasks win-x64 --targets win-x64 .
+        run: npm run dist
 
       - name: Upload do Sistema
         uses: actions/upload-artifact@v4
         with:
-          name: Sistema-Atestados-Final
-          path: dist/
+          name: Sistema-Atestados-Windows
+          path: ./dist/
